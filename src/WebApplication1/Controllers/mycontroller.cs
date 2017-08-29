@@ -8,9 +8,13 @@ namespace WebApplication1.Controllers
 {
     public class mycontroller : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello from my controller";
+            if (DateTime.Today.DayOfWeek==DayOfWeek.Tuesday)
+            {
+                return Redirect("/");
+            }
+            return Content("Hello from my controller");
         }
     }
 }
