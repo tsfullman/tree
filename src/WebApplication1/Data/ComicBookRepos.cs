@@ -11,6 +11,7 @@ namespace WebApplication1.Data
         private static model1[] model1s = new model1[] {
     new model1()
     {
+        Id=1,
         SeriesTitle = "The Amazing Spider-Man",
         IssueNumber = 700,
         DescriptionHtml = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives...<strong>will Peter Parker?</strong></p>",
@@ -26,6 +27,7 @@ namespace WebApplication1.Data
     },
     new model1()
     {
+        Id=2,
         SeriesTitle = "The Amazing Spider-Man",
         IssueNumber = 657,
         DescriptionHtml = "<p><strong>FF: THREE TIE-IN.</strong> Spider-Man visits the FF for a very private wake--just for family.</p>",
@@ -41,6 +43,7 @@ namespace WebApplication1.Data
     },
     new model1()
     {
+        Id=3,
         SeriesTitle = "Bone",
         IssueNumber = 50,
         DescriptionHtml = "<p><strong>The Dungeon & The Parapet, Part 1.</strong> Thorn is discovered by Lord Tarsil and the corrupted Stickeaters and thrown into a dungeon with Fone Bone. As she sleeps, a message comes to her about the mysterious \"Crown of Horns\".</p>",
@@ -54,8 +57,11 @@ namespace WebApplication1.Data
         Favorite = false
     }
 };
-        public class ComicBookRepos
+
+        public model1[] GetComicBooks()
         {
+            return model1s;
+        }
 
             public model1 GetComicBook(int id)
             {
@@ -72,4 +78,3 @@ namespace WebApplication1.Data
             }
         }
     }
-}
