@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FootballApp.Models.FootballTeamsTable>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+ center-table
+    {
+        margin: 0px auto!important;
+        float: none!important;
+    }
+</style>
+
+<table class="table text-center table-bordered">
+
+@foreach (var item in Model) {  
+    <tr>
+        <td>
+            @if (item.Id % 2 != 0)
+            {
+            <input type="checkbox" name="vehicle" value="Bike"> @Html.DisplayFor(modelItem => item.Team)<br>
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.Team)<br>
+            }
+
+            @Html.DisplayFor(modelItem => item.Record)<br>  
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfGame)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
